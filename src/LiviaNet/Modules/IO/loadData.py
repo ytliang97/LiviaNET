@@ -32,6 +32,8 @@ import scipy.io as sio
 
 from ImgOperations.imgOp import applyPadding
 
+nib.Nifti1Header.quaternion_threshold = -1e-06
+
 # ----- Loader for nifti files ------ #
 def load_nii (imageFileName, printFileNames) :
     if printFileNames == True:
