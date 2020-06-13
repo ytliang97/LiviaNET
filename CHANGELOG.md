@@ -17,6 +17,11 @@ D: Debug
 
 ### June 13, 2020
 + D-1: src/LiviaNET_Config.ini, BraTS的label是4+1, MR shape皆為[240,240,155]
-+ D-2: MICCAI Atlas資料集的MR shape會變動[256,256,261:320]，所以要使用這個資料集，需要preprocessing
++ D-2: MICCAI Atlas資料集的MR shape會變動[256,256,261:320]，所以要使用這個資料集，需要preprocessing。relate issue: [josedolz
+/
+LiviaNET #4](https://github.com/josedolz/LiviaNET/issues/4 )、[josedolz
+/
+LiviaNET #5](https://github.com/josedolz/LiviaNET/issues/5 )
 + A-1: delete src/LiviaNet/Modules/General/__init__.pyc
 + A-2: add Dataset/nifti_label_info.py 用來看nifti data的label num, total label, shape
++ C-5: src/LiviaNet/startTraining.py, 紀錄subepoch的cost作為loss圖

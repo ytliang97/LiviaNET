@@ -39,6 +39,9 @@ from Modules.IO.sampling import getSamplesSubepoch
 from Modules.Parsers.parsersUtils import parserConfigIni
 from startTesting import segmentVolume
 import pdb
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 
 def startTraining(networkModelName,configIniName):
@@ -104,6 +107,7 @@ def startTraining(networkModelName,configIniName):
     sampleSize_Train = myLiviaNet3D.sampleSize_Train
 
     trainingCost = []
+    loss_value = [] # for generate graph of loss value per step
 
     if myParserConfigIni.applyPadding == 1:
         applyPadding = True
@@ -167,6 +171,7 @@ def startTraining(networkModelName,configIniName):
 
             # Get mean cost epoch
             costsOfEpoch.append(meanCostOfSubepoch)
+            loss_value.append(meanCostOfSubepoch)
 
         meanCostOfEpoch =  sum(costsOfEpoch) / float(numberOfSubEpochs)
         
@@ -231,6 +236,7 @@ def startTraining(networkModelName,configIniName):
         BASE_DIR = os.getcwd()
         path_Temp = os.path.join(BASE_DIR,'outputFiles')
         netFolderName = os.path.join(path_Temp,myLiviaNet3D.folderName)
+        loss_save_path = os.path.join(netFolderName, myLiviaNet3D.folderName+'loss.png')
         netFolderName  = os.path.join(netFolderName,'Networks')
 
         modelFileName = netFolderName + "/" + myLiviaNet3D.networkName + "_Epoch" + str (myLiviaNet3D.numberOfEpochsTrained)
@@ -238,6 +244,13 @@ def startTraining(networkModelName,configIniName):
  
         strFinal =  " Network model saved in " + netFolderName + " as " + myLiviaNet3D.networkName + "_Epoch" + str (myLiviaNet3D.numberOfEpochsTrained)
         print  strFinal
+
+        x = list(range(1,len(loss_value)+1))
+        plt.plot(x,loss_value)
+        plt.xlabel('step')
+        plt.ylabel('loss')
+        plt.savefig(loss_save_path, bbox_inches='tight')
+
 
     print("................ The whole Training is done.....")
     print(" ************************************************************************************ ")
