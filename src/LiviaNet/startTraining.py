@@ -174,7 +174,7 @@ def startTraining(networkModelName,configIniName):
             costsOfEpoch.append(meanCostOfSubepoch)
             loss_value.append(meanCostOfSubepoch)
 
-        meanCostOfEpoch =  sum(costsOfEpoch) / float(numberOfSubEpochs)
+        meanCostOfEpoch =  sum(costsOfEpoch) / float(numberOfSubEpochs[e_i])
         
         # Include the epoch cost to the main training cost and update current mean 
         trainingCost.append(meanCostOfEpoch)
