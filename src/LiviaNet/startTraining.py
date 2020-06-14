@@ -128,7 +128,7 @@ def startTraining(networkModelName,configIniName):
         
         for subE_i in xrange(numberOfSubEpochs[e_i]): 
             epoch_nr = subE_i+1
-            print (" --- SubEPOCH: {}/{}".format(epoch_nr,myLiviaNet3D.numberOfSubEpochs))
+            print (" --- SubEPOCH: {}/{}".format(epoch_nr,numberOfSubEpochs[e_i]))
 
             # Get all the samples that will be used in this sub-epoch
             [imagesSamplesAll,
