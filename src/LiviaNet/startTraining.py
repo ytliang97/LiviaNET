@@ -115,6 +115,7 @@ def startTraining(networkModelName,configIniName):
         applyPadding = False
     
     learningRateModifiedEpoch = 0
+    numberOfSubEpochs = [100,500,1000]
     
     # Run over all the (remaining) epochs and subepochs
     for e_i in xrange(numberOfEpochs):
@@ -125,7 +126,7 @@ def startTraining(networkModelName,configIniName):
 
         costsOfEpoch = []
         
-        for subE_i in xrange(numberOfSubEpochs): 
+        for subE_i in xrange(numberOfSubEpochs[e_i]): 
             epoch_nr = subE_i+1
             print (" --- SubEPOCH: {}/{}".format(epoch_nr,myLiviaNet3D.numberOfSubEpochs))
 

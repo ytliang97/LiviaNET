@@ -25,3 +25,6 @@ LiviaNET #5](https://github.com/josedolz/LiviaNET/issues/5 )
 + A-1: delete src/LiviaNet/Modules/General/__init__.pyc
 + A-2: add Dataset/nifti_label_info.py 用來看nifti data的label num, total label, shape
 + C-5: src/LiviaNet/startTraining.py, 紀錄subepoch的cost作為loss圖
+
+### June 14, 2020
++ A-3: src/LiviaNet/startTraining.py 修改numberOfSubEpochs，讓其以指定sub epoch數目進行每個epoch
