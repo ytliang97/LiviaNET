@@ -31,3 +31,4 @@ LiviaNET #5](https://github.com/josedolz/LiviaNET/issues/5 )
 
 ### June 15, 2020
 + D-1: src/LiviaNet/startTesting.py 確認中的image Folder
++ A-4: src/merge_label.py 新增簡易merge label工具
