@@ -28,3 +28,6 @@ LiviaNET #5](https://github.com/josedolz/LiviaNET/issues/5 )
 
 ### June 14, 2020
 + A-3: src/LiviaNet/startTraining.py 修改numberOfSubEpochs，讓其以指定sub epoch數目進行每個epoch
+
+### June 15, 2020
++ D-1: src/LiviaNet/startTesting.py 確認中的image Folder

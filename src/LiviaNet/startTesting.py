@@ -241,6 +241,8 @@ def startTesting(networkModelName,
     print " -------- Reading Images names for segmentation -------------"
     
     # -- Get list of images used for testing -- #
+    print('myParserConfigIni.imagesFolder', myParserConfigIni.imagesFolder)
+    print('yParserConfigIni.indexesToSegment', yParserConfigIni.indexesToSegment)
     (imageNames_Test, names_Test) = getImagesSet(myParserConfigIni.imagesFolder,myParserConfigIni.indexesToSegment)  # Images
     (groundTruthNames_Test, gt_names_Test) = getImagesSet(myParserConfigIni.GroundTruthFolder,myParserConfigIni.indexesToSegment) # Ground truth
     (roiNames_Test, roi_names_Test) = getImagesSet(myParserConfigIni.ROIFolder,myParserConfigIni.indexesToSegment) # ROI
