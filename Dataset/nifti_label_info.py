@@ -15,3 +15,7 @@ img = img.get_data()
 print('label of ',FLAGS.label_path.split('/')[-1], ':', np.unique(img))
 print('total', len(np.unique(img)))
 print('shape', img.shape)
+
+print('amount of label 0:',np.count_nonzero(img==0))
+print('amount of label 1:',np.count_nonzero(img==1))
+print('amount of label 2:',np.count_nonzero(img==2))
