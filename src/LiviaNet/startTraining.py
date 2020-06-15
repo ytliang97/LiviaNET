@@ -144,7 +144,9 @@ def startTraining(networkModelName,configIniName):
 
             # Variable that will contain weights for the cost function
             # --- In its current implementation, all the classes have the same weight
-            weightsCostFunction = np.ones(myLiviaNet3D.n_classes, dtype='float32')
+            #weightsCostFunction = np.ones(myLiviaNet3D.n_classes, dtype='float32')
+            # manual fine tuning
+            weightsCostFunction = np.array([0.2,0.2,0.6], dtype='float32')
                
             numberBatches = len(imagesSamplesAll) / myLiviaNet3D.batch_Size 
             
